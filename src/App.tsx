@@ -19,7 +19,7 @@ function App() {
     if (name === "HEX" && value.length === 7) {
       /^[#][0-9A-F]{6}$/.test(value)? (getRGB(value)) : (setRgb("Ошибка ввода HEX кодировки"), setColor("rgb(255, 0, 0)"));
     } else if (name === "HEX" && value.length > 6){
-      setRgb('Не более 7 символов');
+      setRgb('Ошибка!!! 7 символов не более!!!');
       setColor(defaultColor);
     } else {
       setRgb('');

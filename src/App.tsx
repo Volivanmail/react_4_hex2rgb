@@ -16,11 +16,14 @@ function App() {
 
     const { name, value} = event.target;
 
-    if (name === "HEX" && value.length === 7) {
-      /^[#][0-9A-F]{6}$/.test(value)? (getRGB(value)) : (setRgb("Ошибка ввода HEX кодировки"), setColor("rgb(255, 0, 0)"));
-    } else if (name === "HEX" && value.length > 6){
-      setRgb('Ошибка!!! 7 символов не более!!!');
-      setColor(defaultColor);
+    if (name === "HEX" && !/^[#]/.test(value) && value.length > 1 && value.length <7) {
+      setRgb("Внимательнее! HEX код начинается с -  #");
+      setColor("rgb(220, 130, 0)");
+    } else if (name === "HEX" && value.length === 7) {
+      /^[#][0-9A-Fa-f]{6}$/.test(value)? (getRGB(value)) : (setRgb("Ошибка ввода HEX кодировки"), setColor("rgb(255, 0, 0)"));
+    } else if (name === "HEX" && value.length > 7){
+      setRgb('Ошибка! HEX код - 7 символов!');
+      setColor("rgb(255, 0, 0)");
     } else {
       setRgb('');
       setColor(defaultColor);

@@ -25,9 +25,10 @@
 }
 .input {
   margin: 10px;
-  min-width: 250px;
+  min-width: 280px;
   min-height: 20px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .form {
